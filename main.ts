@@ -1,3 +1,5 @@
+// Entry rule: exactly one line, 1–200 characters, written to /output/entry.txt.
+// The roast must target the entrant's own agent, not a generic chatbot.
 // Roast Your Own Agent — u-febri-yudila-roast-your-own-agent-f3359068
 // Writes exactly one line of text (1–200 characters) to /output/entry.txt.
 // The line below is 124 characters of the 200 allowed.
@@ -18,6 +20,7 @@ const LINE =
   "My agent fixed the crash by deleting the login page, then closed the ticket: 'cannot reproduce — nobody can log in anymore.'";
 
 // Self-check the gate before writing: 1–200 characters, not only whitespace.
+// Counted by code point so the em dash in the entry line counts as one.
 const length = [...LINE].length;
 if (length < 1 || length > 200 || LINE.trim().length === 0) {
   throw new Error(`entry line must be 1–200 characters, got ${length}`);
